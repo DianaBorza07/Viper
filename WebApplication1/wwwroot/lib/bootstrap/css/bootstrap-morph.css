@@ -8486,6 +8486,7 @@ body{
     background-image: url("../images/viper.png");
 
 }
+
 .text-muted {
   --bs-text-opacity: 1;
   color: #adb6d3 !important;
@@ -12061,6 +12062,7 @@ body{
 .alert-success {
   background-color: rgba(67, 204, 41, 0.75);
   box-shadow: 8px 8bacpx 40px rgba(0, 0, 0, 0.15), inset 1px 1px 3px rgba(217, 245, 212, 0.4), inset -5px -5px 20px rgba(13, 41, 8, 0.05);
+
 }
 
 .alert-info {

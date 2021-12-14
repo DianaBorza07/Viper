@@ -27,6 +27,7 @@ namespace CarRental.Models.ViewModels
 
         [Required]
         [Display(Name = "Driving License")]
+
         public string DrivingLicense { get; set; }
 
         [Required]
