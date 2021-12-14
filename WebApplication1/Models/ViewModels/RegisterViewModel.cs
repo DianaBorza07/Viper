@@ -26,7 +26,8 @@ namespace CarRental.Models.ViewModels
         public string PhoneNumber { get; set; }
 
         [Required]
-        [Display(Name = "Drivig License")]
+        [Display(Name = "Driving License")]
+
         public string DrivingLicense { get; set; }
 
         [Required]
