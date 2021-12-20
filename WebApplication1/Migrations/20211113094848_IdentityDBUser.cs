@@ -41,7 +41,6 @@ namespace CarRental.Migrations
                     LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
                     DrivingLicense = table.Column<string>(type: "nvarchar(max)", nullable : true),
                     AccessFailedCount = table.Column<int>(type: "int", nullable: false),
-                    Role = table.Column<string>(type: "nvarchar(max)", nullable: true),
 
                 },
                 constraints: table =>

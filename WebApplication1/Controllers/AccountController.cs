@@ -34,15 +34,23 @@ namespace CarRental.Controllers
         {
             if (ModelState.IsValid)
             {
+                String[] userNameModel = model.Email.Split('@');
+                String username = userNameModel[0];
+                String createUsername = null;
+                if (String.Compare(username, "null", comparisonType: StringComparison.OrdinalIgnoreCase) == 0)
+                    createUsername = model.Email;
+                else
+                    createUsername = username;
                 var user = new User
                 {
-                    UserName = model.Email,
+                    UserName = createUsername,
                     Email = model.Email,
                     PhoneNumber = model.PhoneNumber,
                     DrivingLicense = model.DrivingLicense,
                 };
 
                 var result = await _userManager.CreateAsync(user, model.Password);
+                var result2 = await _userManager.AddToRoleAsync(user, Roles.Basic.ToString());
 
                 if (result.Succeeded)
                 {
@@ -56,7 +64,7 @@ namespace CarRental.Controllers
                     ModelState.AddModelError("", error.Description);
                 }
 
-                ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
+                ModelState.AddModelError(string.Empty, "Invalid Register Attempt");
 
             }
             return View(model);
@@ -79,17 +87,26 @@ namespace CarRental.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(user.Email, user.Password, user.RememberMe, false);
+                String email = user.Email;
+                String[] splitEmail = email.Split('@');
+                String userName = null;
+                if (String.Compare(splitEmail[0], "null", comparisonType: StringComparison.OrdinalIgnoreCase) == 0)
+                    userName = user.Email;
+                else
+                    userName = splitEmail[0];
+                var result = await _signInManager.PasswordSignInAsync(userName, user.Password, user.RememberMe, false);
 
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Home");
                 }
 
+
                 ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
 
             }
             return View(user);
         }
+
+        }
     }
-}
