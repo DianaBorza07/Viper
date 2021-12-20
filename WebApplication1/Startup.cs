@@ -29,9 +29,8 @@ namespace WebApplication1
         {
             string connectionString = Configuration.GetConnectionString("CarRentalContext");
             services.AddDbContext<AppDBContext>(c => c.UseSqlServer(connectionString));
-
-            //services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDBContext>();
-            services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AppDBContext>();
+            //services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AppDBContext>();
+            services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AppDBContext>().AddDefaultUI().AddDefaultTokenProviders();
             services.AddControllersWithViews();
         }
 
