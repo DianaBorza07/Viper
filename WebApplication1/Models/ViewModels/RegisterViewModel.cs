@@ -15,6 +15,7 @@ namespace CarRental.Models.ViewModels
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Confirm Password")]
         [Compare("Password", ErrorMessage = "Password and confirmation password not match.")]
@@ -27,11 +28,7 @@ namespace CarRental.Models.ViewModels
 
         [Required]
         [Display(Name = "Driving License")]
-
         public string DrivingLicense { get; set; }
 
-        [Required]
-        [Display(Name = "Role")]
-        public string Role { get; set; }
     }
 }
