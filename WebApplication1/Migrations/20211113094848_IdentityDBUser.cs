@@ -154,6 +154,7 @@ namespace CarRental.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -192,6 +193,7 @@ namespace CarRental.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
