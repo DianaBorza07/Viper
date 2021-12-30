@@ -13,9 +13,9 @@
 
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row>
             <div class="col-md-12">
-                <div class="login-form">
+                <div class="register-form">
                     <form method="post">
                         <div class="d-flex justify-content-center">
                             <h2 class="h3 mb-3 font-weight-normal">Create account</h2>
@@ -46,7 +46,7 @@
 
                         <div class="form-group">
                             <label asp-for="DrivingLicense"></label>
-                            <input asp-for="DrivingLicense" class="form-control" />
+                            <select asp-for="DrivingLicense" class="form-control" asp-items="@(new SelectList(ViewBag.responseCategory))" size="1"></select>
                             <span asp-validation-for="DrivingLicense" class="text-danger"></span>
                         </div>
 

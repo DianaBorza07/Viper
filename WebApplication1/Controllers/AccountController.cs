@@ -27,6 +27,10 @@ namespace CarRental.Controllers
         }
         public IActionResult Register()
         {
+            List<String> responseCategory = new List<String>();
+            responseCategory.Add("No");
+            responseCategory.Add("Yes");
+            ViewBag.responseCategory = responseCategory;
             return View();
         }
         [HttpPost]
@@ -41,7 +45,7 @@ namespace CarRental.Controllers
                     createUsername = model.Email;
                 else
                     createUsername = username;
-                var user = new User
+                var user = new User 
                 {
                     UserName = createUsername,
                     Email = model.Email,
