@@ -20,6 +20,8 @@ namespace WebApplication1.Models
 
         public DateTime fabricationDate { get; set; }
 
+        public String photoPath { get; set; }
+
 
     }
 }
