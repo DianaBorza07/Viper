@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
@@ -23,5 +24,6 @@ namespace WebApplication1.Models
             var user = new ClaimsIdentity(await manager.GetClaimsAsync(this));
             return user;
         }
+
     }
 }

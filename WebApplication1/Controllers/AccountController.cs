@@ -1,10 +1,15 @@
 ﻿using CarRental.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
 using System.Threading.Tasks;
 using WebApplication1.Models;
 
@@ -85,6 +90,7 @@ namespace CarRental.Controllers
         {
             return View();
         }
+
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Login(LoginViewModel user)
@@ -101,8 +107,17 @@ namespace CarRental.Controllers
                 var result = await _signInManager.PasswordSignInAsync(userName, user.Password, user.RememberMe, false);
 
                 if (result.Succeeded)
-                {
-                    return RedirectToAction("Index", "Home");
+                {  
+                    var user1 =await  _userManager.FindByEmailAsync(user.Email);
+                    if (user1 != null)
+                    {
+                        HttpContext.Session.SetString("ID_User", JsonConvert.SerializeObject(user1.Email));
+                        /*if (await _userManager.IsInRoleAsync( user1, "Admin"))
+                            return RedirectToAction("Index", "Home");
+                        else*/
+                            return RedirectToAction("Index", "Home");
+                    }
+                    else ModelState.AddModelError(string.Empty, "Invalid login attempt");
                 }
 
 
