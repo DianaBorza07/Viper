@@ -111,10 +111,7 @@ namespace CarRental.Controllers
                     var user1 =await  _userManager.FindByEmailAsync(user.Email);
                     if (user1 != null)
                     {
-                        HttpContext.Session.SetString("ID_User", JsonConvert.SerializeObject(user1.Email));
-                        /*if (await _userManager.IsInRoleAsync( user1, "Admin"))
-                            return RedirectToAction("Index", "Home");
-                        else*/
+                        HttpContext.Session.SetString("User", JsonConvert.SerializeObject(user1));
                             return RedirectToAction("Index", "Home");
                     }
                     else ModelState.AddModelError(string.Empty, "Invalid login attempt");

@@ -27,14 +27,30 @@ namespace WebApplication1.Controllers
 
         public IActionResult Index()
         {
-            var user = HttpContext.Session.GetString("ID_User");
             int Ok = 0;
-            if (user != null) {
-            Ok = 1;
-            var aux = JsonConvert.DeserializeObject(user);
-            var appUser = _userManager.FindByEmailAsync(aux.ToString()); 
-            User user1 = (User)appUser.Result;
-                ViewData["User"] = user1.NormalizedUserName;
+            var obj = HttpContext.Session.GetString("User");
+            if(obj!=null)
+            {
+                var deserializedObj = JsonConvert.DeserializeObject<dynamic>(obj);
+                User appUser = new User();
+                Ok = 1;
+                appUser.AccessFailedCount = deserializedObj.AccessFailedCount;
+                appUser.ConcurrencyStamp = deserializedObj.ConcurrencyStamp;
+                appUser.DrivingLicense = deserializedObj.DrivingLicense;
+                appUser.Email = deserializedObj.Email;
+                appUser.EmailConfirmed = deserializedObj.EmailConfirmed;
+                appUser.Id = deserializedObj.Id;
+                appUser.LockoutEnabled = deserializedObj.LockoutEnabled;
+                appUser.LockoutEnd = deserializedObj.LockoutEnd;
+                appUser.NormalizedEmail = deserializedObj.NormalizedEmail;
+                appUser.NormalizedUserName = deserializedObj.NormalizedUserName;
+                appUser.PasswordHash = deserializedObj.PasswordHash;
+                appUser.PhoneNumber = deserializedObj.PhoneNumber;
+                appUser.PhoneNumberConfirmed = deserializedObj.PhoneNumberConfirmed;
+                appUser.SecurityStamp = deserializedObj.SecurityStamp;
+                appUser.TwoFactorEnabled = deserializedObj.TwoFactorEnabled;
+                appUser.UserName = deserializedObj.UserName;
+                ViewData["User"] = appUser.UserName;
                 ViewData["ok"] = Ok;
             }
             

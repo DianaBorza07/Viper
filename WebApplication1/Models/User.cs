@@ -16,8 +16,6 @@ namespace WebApplication1.Models
         [StringLength(13, ErrorMessage = "Phone cannot exceed 13 characters!")]
         public string PhoneNumber { get; set; }
 
-        //public string FirstName { get; set; }
-        //public string LastName { get; set; }
 
         public async Task<ClaimsIdentity> generateUserIdentity(UserManager<User> manager)
         {
