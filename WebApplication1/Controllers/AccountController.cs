@@ -1,4 +1,5 @@
-﻿using CarRental.Models.ViewModels;
+﻿using CarRental.Models;
+using CarRental.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -11,7 +12,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
-using WebApplication1.Models;
+
 
 namespace CarRental.Controllers
 {

@@ -61,7 +61,7 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
-    background-image: url(../images/viper.png);
+    background-image: url(../images/backgroundImage.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 
