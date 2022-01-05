@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.Models;
 
+
 namespace CarRental.Models.AppDBContext
 {
     public class ApplicationDBContext : IdentityDbContext<User>
