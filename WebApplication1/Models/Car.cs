@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApplication1.Models
+namespace CarRental.Models
 {
     public class Car
     {
@@ -19,6 +19,8 @@ namespace WebApplication1.Models
         public string model { get; set; }
 
         public DateTime fabricationDate { get; set; }
+
+        public String photoPath { get; set; }
 
 
     }

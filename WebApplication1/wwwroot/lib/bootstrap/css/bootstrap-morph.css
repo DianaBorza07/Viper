@@ -2372,7 +2372,7 @@ textarea.form-control-lg {
   line-height: 1.5;
   color: #7b8ab8;
   background-color: #f0f5fa;
-  background-image: url("../images/viper.png");
+  background-image: url("../images/backgroundImage.jpg");
   background-repeat: no-repeat;
   background-position: right 1.5rem center;
   background-size: 16px 12px;
@@ -2512,7 +2512,7 @@ textarea.form-control-lg {
 .form-switch .form-check-input {
   width: 2em;
   margin-left: -2.5em;
-  background-image: url("../images/viper.png");
+  background-image: url("../images/backgroundImage.jpg");
   background-position: left center;
   border-radius: 2em;
   transition: background-position 0.15s ease-in-out;
@@ -8483,7 +8483,7 @@ fieldset:disabled .btn {
 }
 
 body{
-    background-image: url("../images/viper.png");
+    background-image: url("../images/backgroundImage.jpg");
 
 }
 
