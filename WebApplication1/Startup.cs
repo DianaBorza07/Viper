@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CarRental.Models;
 using CarRental.Models.AppDBContext;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,9 +29,9 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
             string connectionString = Configuration.GetConnectionString("CarRentalContext");
-            services.AddDbContext<AppDBContext>(c => c.UseSqlServer(connectionString));
+            services.AddDbContext<ApplicationDBContext>(c => c.UseSqlServer(connectionString));
             //services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AppDBContext>();
-            services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AppDBContext>().AddDefaultUI().AddDefaultTokenProviders();
+            services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationDBContext>().AddDefaultUI().AddDefaultTokenProviders();
             services.AddControllersWithViews();
             //services.AddMvc();
 
@@ -68,7 +69,7 @@ namespace WebApplication1
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Account}/{action=Login}/{id?}");
             });
         }
     }

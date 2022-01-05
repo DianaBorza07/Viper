@@ -8,15 +8,17 @@ using WebApplication1.Models;
 
 namespace CarRental.Models.AppDBContext
 {
-    public class AppDBContext : IdentityDbContext<User>
+    public class ApplicationDBContext : IdentityDbContext<User>
     {
         private readonly DbContextOptions _options;
 
-        public AppDBContext(DbContextOptions options) : base(options)
+        public ApplicationDBContext(DbContextOptions options) : base(options)
         {
             _options = options;
         }
 
+        public DbSet<Car> Cars { set; get; }
+        public DbSet<Rental> Rentals { set; get; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
