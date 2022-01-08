@@ -1,6 +1,6 @@
-﻿@model CarRental.Models.Car
+﻿@model CarRental.Models.ViewModels.RentViewModel
 @{
-    ViewData["Title"] = "titlle";
+    ViewData["Title"] = "Rent";
 }
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -13,38 +13,44 @@
         Car Rentail
     </h1>
 </div>
-
-<div class="form-group"
-        <label class=" form-label">Customer Name</label>
-        <select class="form-control" id="customername" name="customername" placeholder="Customer Name" required>
+<body>
+    <form method="post">
+        <div class="form-group"
+        <label class=" form-label">First Name</label>
+        @*<select class="form-control" id="customername" name="customername" placeholder="Customer Name" required>
             <option>Please Select</option>
-        </select>
+        </select>*@
+        <input asp-for="firstName" class="form-control" />
     </div>
 
-<div class="form-group"
-        <label class=" form-label">Email</label>
-        <select class="form-control" id="Email" name="Email" placeholder="Email" required>
+        <div class="form-group"
+        <label class=" form-label">Last Name</label>
+       @* <select class="form-control" id="Email" name="Email" placeholder="Email" required>
             <option>Please Select</option>
-        </select>
+        </select>*@
+        <input asp-for="lastName" class="form-control" />
     </div>
 
-<div class="form-group"
-        <label class=" form-label">Start Date</label>
-        <select class="form-control" id="Start Date" name="Start Date" placeholder="Start Date" required>
-            <option>Please Select</option>
-        </select>
-    </div>
+        @*<div class="form-group"
+            <label class=" form-label">Start Date</label>
+            <select class="form-control" id="Start Date" name="Start Date" placeholder="Start Date" required>
+                <option>Please Select</option>
+            </select>
+        </div>
 
-<div class="form-group"
-        <label class=" form-label">End Date</label>
-        <select class="form-control" id="End Date" name="End Date" placeholder="End Date" required>
-            <option>Please Select</option>
-        </select>
-    </div>
+            <div class="form-group"
+            <label class=" form-label">End Date</label>
+            <select class="form-control" id="End Date" name="End Date" placeholder="End Date" required>
+                <option>Please Select</option>
+            </select>
+        </div>*@
+        <div class="form-group">
+            <label>@ViewBag.car</label>
+        </div>
 
-
-<input type="submit" value="Send rental" name="allertMessage" id="SendRental" />
-
-
-
-
+        @*<input type="submit" value="Send rental" name="allertMessage" id="SendRental" />*@
+        <div>
+            <a class="btn btn-primary" asp-area="" asp-controller="Rent" asp-action="PlaceOrder" asp-route-carId="@ViewBag.carId">Rent car</a>
+        </div>
+    </form>
+</body>

@@ -30,7 +30,7 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
             string connectionString = Configuration.GetConnectionString("CarRentalContext");
-            services.AddDbContext<ApplicationDBContext>(c => c.UseSqlServer(connectionString));
+            services.AddDbContext<ApplicationDBContext>(c => c.UseSqlServer(connectionString),ServiceLifetime.Transient);
             //services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AppDBContext>();
             services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationDBContext>().AddDefaultUI().AddDefaultTokenProviders();
             services.AddControllersWithViews();
