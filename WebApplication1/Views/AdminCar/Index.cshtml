@@ -1,0 +1,33 @@
+﻿@model CarRental.Models.Car
+@{
+    ViewData["Title"] = "Cars";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/css//bootstrap-morph.css" />
+</head>
+<h1 style="text-size-adjust">Available cars</h1>
+<table class="table table-striped ">
+    <thead>
+        <tr>
+            <th style="color:black">Brand</th>
+            <th style="color:black">Model</th>
+            <th style="color:black">Fabrication Date</th>
+            <th style="color:black">Photo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in ViewBag.cars)
+        {
+            <tr>
+                <td style="color:black">@car.brand</td>
+                <td style="color:black">@car.model</td>
+                <td style="color:AppWorkspace">@car.fabricationDate</td>
+                <td>
+                    <img style="max-width:250px;max-height:150px" src="@car.photoPath" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
