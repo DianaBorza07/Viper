@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="~/lib/bootstrap/css//bootstrap-morph.css" />
 </head>
 <form method="post">
-    <div class="card">
+
         <div class="card-header">
-            <h2>Manage User Roles</h2>
-            Add/Remove Roles for User / @ViewBag.UserName.
+            <h2 style="color:black">Manage User Roles</h2>
+            <p style="color:black">Add/Remove Roles for User / @ViewBag.UserName.</p>
         </div>
-        <div class="card-body">
+        <div class="card">
             @for (int i = 0; i < Model.Count; i++)
             {
                 <div class="form-check m-1">
@@ -31,8 +31,8 @@
         <div class="card-footer">
             <input type="submit" value="Update" class="btn btn-primary"
                    style="width:auto" />
-            <a asp-action="EditUser" asp-route-id="@ViewBag.userId"
-               class="btn btn-primary" style="width:auto">Cancel</a>
+            <a asp-action="Index" asp-route-id="@ViewBag.userId"
+               class="btn btn-primary" style="width:auto" asp-controller="UserRoles" >Cancel</a>
         </div>
     </div>
 </form>

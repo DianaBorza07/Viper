@@ -15,6 +15,7 @@ namespace CarRental.Controllers
     public class AdminCarController : Controller
     {
         private readonly ApplicationDBContext _context;
+        private readonly AddCarViewModel model;
 
         public AdminCarController(ApplicationDBContext context)
         {
@@ -39,36 +40,17 @@ namespace CarRental.Controllers
             ViewBag.cars = carModel;
             return View();
         }
-        public async Task<IActionResult> addCar()
+
+        public async Task<IActionResult> AddCar(AddCarViewModel model)
         {
+            Console.WriteLine("aici");
             return View();
         }
 
-        /* public IActionResult ConfirmAdd()
-         {
-             AddCarViewModel model = new AddCarViewModel();
-             Console.WriteLine("+++++-" + model.date);
-             return View(model);
-         }
-     */
-
-        /*public async Task<IActionResult> ConfirmAdd(IFormCollection form)
+        public async Task<IActionResult> AddPage()
         {
-
-            // Console.WriteLine(Request["data"].ToString());
-             Console.WriteLine("+++"+form["data"]);
-           // Console.WriteLine("----"+model.date);
-            //Console.WriteLine(HttpContext.Request.QueryString["name"].toString());
+            Console.WriteLine("Add page");
             return View();
-
-        }*/
-
-        //[Route("{id:int}")]
-        //[HttpPost]
-        public ActionResult ConfirmAdd(AddCarViewModel model)
-        {
-            AddCarViewModel newModel = model;
-            return View(model);
         }
 
     }
