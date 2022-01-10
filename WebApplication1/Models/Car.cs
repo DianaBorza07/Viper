@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace CarRental.Models
 {
     public class Car
-    {
+    {   
+        [Key]
         public int id { get; set; }
 
         [Required(ErrorMessage = "Car brand is required!")]
@@ -17,6 +18,8 @@ namespace CarRental.Models
         [Required(ErrorMessage = "Car model is required!")]
         [StringLength(255, ErrorMessage = "Model cannot exceed 255 characters")]
         public string model { get; set; }
+
+        public float price { get; set; }
 
         public DateTime fabricationDate { get; set; }
 

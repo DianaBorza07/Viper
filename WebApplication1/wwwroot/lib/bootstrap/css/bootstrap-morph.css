@@ -2363,26 +2363,26 @@ textarea.form-control-lg {
 }
 
 .form-select {
-  display: block;
-  width: 100%;
-  padding: 1rem 4.5rem 1rem 1.5rem;
-  -moz-padding-start: calc(1.5rem - 3px);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #7b8ab8;
-  background-color: #f0f5fa;
-  background-image: url("../images/backgroundImage.jpg");
-  background-repeat: no-repeat;
-  background-position: right 1.5rem center;
-  background-size: 16px 12px;
-  border: 0 solid #bed1e6;
-  border-radius: 0.25rem;
-  box-shadow: inset 2px 2px 8px rgba(55, 94, 148, 0.3), inset -3px -2px 5px rgba(255, 255, 255, 0.8);
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+    display: block;
+    width: 100%;
+    padding: 1rem 4.5rem 1rem 1.5rem;
+    -moz-padding-start: calc(1.5rem - 3px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #7b8ab8;
+    background-color: #f0f5fa;
+    background-image: url("../images/backgroundImage.jpg");
+    background-repeat: no-repeat;
+    background-position: right 1.5rem center;
+    background-size: 16px 12px;
+    border: 0 solid #bed1e6;
+    border-radius: 0.25rem;
+    box-shadow: inset 2px 2px 8px rgba(55, 94, 148, 0.3), inset -3px -2px 5px rgba(255, 255, 255, 0.8);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2509,14 +2509,14 @@ textarea.form-control-lg {
   padding-left: 2.5em;
 }
 
-.form-switch .form-check-input {
-  width: 2em;
-  margin-left: -2.5em;
-  background-image: url("../images/backgroundImage.jpg");
-  background-position: left center;
-  border-radius: 2em;
-  transition: background-position 0.15s ease-in-out;
-}
+    .form-switch .form-check-input {
+        width: 2em;
+        margin-left: -2.5em;
+        background-image: url("../images/backgroundImage.jpg");
+        background-position: left center;
+        border-radius: 2em;
+        transition: background-position 0.15s ease-in-out;
+    }
 
 @media (prefers-reduced-motion: reduce) {
   .form-switch .form-check-input {
@@ -8482,9 +8482,8 @@ fieldset:disabled .btn {
   color: rgba(var(--bs-body-color-rgb), var(--bs-text-opacity)) !important;
 }
 
-body{
+body {
     background-image: url("../images/backgroundImage.jpg");
-
 }
 
 .text-muted {

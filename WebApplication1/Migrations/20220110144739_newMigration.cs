@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CarRental.Migrations
 {
-    public partial class appMigration : Migration
+    public partial class newMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -55,6 +55,7 @@ namespace CarRental.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     brand = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     model = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    price = table.Column<float>(type: "real", nullable: false),
                     fabricationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     photoPath = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -177,7 +178,9 @@ namespace CarRental.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     userId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     carid = table.Column<int>(type: "int", nullable: true),
-                    rentalDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    rentalDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    clientFirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    clientLastName = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

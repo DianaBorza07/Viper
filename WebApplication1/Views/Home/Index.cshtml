@@ -7,15 +7,25 @@
 <html>
 <head>
     <div class="text-center">
-            <h1 class="display-4">Welcome to Viper</h1>
-            <p>&copy; Car rental company </p>
-            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-            <link rel="stylesheet" href="~/lib/bootstrap/css//bootstrap-morph.css" />
-            <link rel="stylesheet" href="~/css/site.css" />
-            @if (ViewData["ok"] != null)
-            {
-                <p>Hello,@ViewData["User"]!</p>
-            }
+        <h1 class="display-4">Welcome to Viper</h1>
+        <p>&copy; Car rental company </p>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/css//bootstrap-morph.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        @if (ViewData["ok"] != null)
+        {
+            <p>Hello,@ViewData["User"]!</p>
+        }   
+        <p style="color:blueviolet">
+            Shift up a gear and make a trip extra special by renting an exotic car from Vidly rent a car.
+            Choose from an exciting selection of luxury rentals ranging from European to American classic
+            convertibles, SUVs, sports cars and much more. With Vidly, you’ll get the latest exotic models
+            from top manufacturers. Choose a high-performance luxury car to make the journey as enjoyable as the destination.
+        </p>
+        <p>
+            <img style="max-width:400px;max-height:400px" src="../images/car_rental.png" />
+        </p>
+
     </div>
     <style>
    

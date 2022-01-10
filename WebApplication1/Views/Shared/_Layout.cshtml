@@ -39,28 +39,34 @@
                                     <a class="nav-link text-dark" asp-area="" asp-controller="UserRoles" asp-action="Index">Manage Users Roles</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="RoleManager" asp-action="Index">Manage Roles</a> 
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="RoleManager" asp-action="Index">Manage Roles</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="  " asp-controller="AdminCar" asp-action="Index">View Cars</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area=" " asp-controller="AdminCar" asp-action="addCar">Add new car</a>
                                 </li>
                             </ul>
                         }
                         else
                         {
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
-                            </li>
-                            <li>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Car" asp-action="Index">View Cars</a>
-                            </li>
-                        </ul>
-                         }
+                            <ul class="navbar-nav flex-grow-1">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Car" asp-action="Index">View Cars</a>
+                                </li>
+                            </ul>
                         }
+                    }
                     else
                     {
                         <ul class="navbar-nav flex-grow-1">
@@ -90,6 +96,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/js/bootstrap-datepicker.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
