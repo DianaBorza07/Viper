@@ -1,0 +1,30 @@
+﻿@model CarRental.Models.Rental
+@{
+    ViewData["Title"] = "Rentals";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/css//bootstrap-morph.css" />
+</head>
+<h1 style="text-size-adjust">All rentals</h1>
+<table class="table table-striped ">
+    <thead>
+        <tr>
+            <th style="color:black">Date</th>
+            <th style="color:black">Client name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var rent in ViewBag.rentals)
+        {
+            <tr>
+                <td style="color:AppWorkspace">@rent.rentalDate</td>
+                <td style="color:black">@rent.clientFirstName @rent.clientLastName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

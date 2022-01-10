@@ -31,6 +31,7 @@ namespace WebApplication1
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
                     await ContextSeed.SeedRolesAsync(userManager, roleManager);
                     await ContextSeed.SeedSuperAdminAsync(userManager, roleManager);
+                    DBInitialize.Initialize(context);
                 }
                 catch (Exception ex)
                 {

@@ -34,6 +34,7 @@ namespace CarRental.Controllers
                 aux.model = car.model;
                 aux.photoPath = car.photoPath;
                 aux.fabricationDate = car.fabricationDate;
+                aux.price = car.price;
                 carModel.Add(aux);
 
             }
@@ -41,16 +42,15 @@ namespace CarRental.Controllers
             return View();
         }
 
-        public async Task<IActionResult> RentCar(string carId)
+        public async Task<IActionResult> RentCar(RentViewModel model,string carId)
         {
             ViewBag.carId = carId;
             var car = await _context.Cars.FindAsync(int.Parse(carId));
             Car car1 = (Car)car;
-            ViewBag.car = car1.brand;
-            Console.WriteLine("id: " + carId + " brand: " + car1.brand);
+            ViewBag.carBrand = car1.brand ;
+            ViewBag.carModel = car1.model;
+            ViewBag.carPhoto = car1.photoPath;
             HttpContext.Session.SetString("Car", JsonConvert.SerializeObject(car1));
-            //HttpContext.Session.SetString("FirstName", JsonConvert.SerializeObject(model.firstName));
-            //HttpContext.Session.SetString("LastName", JsonConvert.SerializeObject(model.lastName));
             return View();
 
         }

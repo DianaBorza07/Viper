@@ -1,9 +1,65 @@
-﻿@model CarRental.Models.ViewModels.RentViewModel
+﻿<!DOCTYPE html>
+@model CarRental.Models.ViewModels.RentViewModel
 @{
     ViewData["Title"] = "Order confirmation";
 }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/css//bootstrap-morph.css" />
 </head>
+
+<div align="center">
+    <h1>
+        <label class="form-label text-xxl-center " style="font-size:larger;color:teal">Rent placed!</label>
+    </h1>
+</div>
+<div align="center">
+    <body style="align-items:center">
+        <table style="background-size:auto;border-spacing:inherit;table-layout:fixed" class="align-content-center">
+            <thead>
+            </thead>
+            <tbody>
+            <td>
+                <section style="margin:auto">
+                    <div align="left">
+                        <div class="form-group">
+                            <label class="form-label text-black" style="font-size:medium;color:HighlightText">Oder details:</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label text-black" style="font-optical-sizing:auto">Order date: @ViewBag.rentDate</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label text-black" style="font-optical-sizing:auto">Car brand: @ViewBag.rentCarBrand</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label text-black" style="font-optical-sizing:auto">Car model: @ViewBag.rentCarModel</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label text-black" style="font-optical-sizing:auto">Car fabrication date: @ViewBag.rentCarDate</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label text-black" style="font-optical-sizing:auto">Car price/hour: @ViewBag.rentCarPrice</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label text-black" style="font-optical-sizing:auto">Client first name: @ViewBag.rentUser1</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label text-black" style="font-optical-sizing:auto">Client first name: @ViewBag.rentUser2</label>
+                        </div>
+                    </div>
+                </section>
+            </td>
+            <td>
+                <section style="margin:auto">
+                    <div align="left">
+                        <img style="max-width:450;max-height:500" src="../images/succes.jpg" />
+                    </div>
+                </section>
+            </td>
+            </tbody>
+
+        </table>
+    </body>
+</div>

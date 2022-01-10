@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using CarRental.Models;
 using CarRental.Models.AppDBContext;
+using CarRental.Models.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models;
@@ -13,6 +15,7 @@ namespace CarRental.Controllers
     public class AdminCarController : Controller
     {
         private readonly ApplicationDBContext _context;
+        private readonly AddCarViewModel model;
 
         public AdminCarController(ApplicationDBContext context)
         {
@@ -30,6 +33,7 @@ namespace CarRental.Controllers
                 aux.model = car.model;
                 aux.photoPath = car.photoPath;
                 aux.fabricationDate = car.fabricationDate;
+                aux.price = car.price;
                 carModel.Add(aux);
 
             }
@@ -37,8 +41,15 @@ namespace CarRental.Controllers
             return View();
         }
 
-        public async Task<IActionResult> addCar()
+        public async Task<IActionResult> AddCar(AddCarViewModel model)
         {
+            Console.WriteLine("aici");
+            return View();
+        }
+
+        public async Task<IActionResult> AddPage()
+        {
+            Console.WriteLine("Add page");
             return View();
         }
 

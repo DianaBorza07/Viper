@@ -25,42 +25,47 @@
 
                         @if (User.IsInRole("Admin"))
                         {
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="UserRoles" asp-action="Index">Manage Users Roles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="RoleManager" asp-action="Index">Manage Roles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="  " asp-controller="AdminCar" asp-action="Index">View Cars</a>
+                        </li>
+                       @* <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area=" " asp-controller="AdminCar" asp-action="AddPage">Add new car</a>
+                        </li>*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area=" " asp-controller="ViewRentals" asp-action="Index">View rentals</a>
+                        </li>
+                    </ul>
+                        }
+                        else
+                        {
                             <ul class="navbar-nav flex-grow-1">
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                                </li>
+                             
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="UserRoles" asp-action="Index">Manage Users Roles</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="RoleManager" asp-action="Index">Manage Roles</a> 
+                                <li>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Car" asp-action="Index">View Cars</a>
                                 </li>
                             </ul>
                         }
-                        else
-                        {
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
-                            </li>
-                            <li>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Car" asp-action="Index">View Cars</a>
-                            </li>
-                        </ul>
-                         }
-                        }
+                    }
                     else
                     {
                         <ul class="navbar-nav flex-grow-1">
@@ -82,14 +87,15 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    @*<footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2021 - Viper - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/js/bootstrap-datepicker.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

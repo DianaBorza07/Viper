@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,8 +10,10 @@ namespace CarRental.Models.ViewModels
     {
         public Rental rent { set; get; }
 
-        public String firstName { set; get; }
+        [Required (ErrorMessage="First name is required!")]
+        public String clientFirstName { set; get; }
 
-        public String lastName { set; get; }
+        [Required(ErrorMessage ="Last name is required")]
+        public String clientLastName { set; get; }
     }
 }

@@ -65,7 +65,7 @@ namespace CarRental.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-
+                    HttpContext.Session.SetString("User", JsonConvert.SerializeObject(user));
                     return RedirectToAction("index", "Home");
                 }
 
